@@ -1,3 +1,9 @@
-[submodule "PX4-Autopilot"]
-	path = PX4-Autopilot
-	url = git@github.com:dasc-lab/PX4-Autopilot.git
+[submodule "colcon_ws/src/px4_msgs"]
+	path = colcon_ws/src/px4_msgs
+	url = git@github.com:dasc-lab/px4_msgs.git
+[submodule "colcon_ws/src/px4_ros_com"]
+	path = colcon_ws/src/px4_ros_com
+	url = git@github.com:dasc-lab/px4_ros_com.git
+[submodule "colcon_ws/src/robot-framework"]
+	path = colcon_ws/src/robot-framework
+	url = git@github.com:dasc-lab/robot-framework.git

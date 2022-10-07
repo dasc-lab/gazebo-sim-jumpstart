@@ -8,6 +8,7 @@ Fork this repo, clone it, and initialize the submodules
 git submodule init
 git submodule update --recursive
 ```
+Note: `--recursive` is important!
 
 This repo is very much designed to be used in a docker environment. To build it, run
 ```
@@ -21,10 +22,17 @@ docker compose up
 
 Enter the docker container. 
 
-First we need to build the `PX4_Autopilot` library:
+First we need to build the `PX4-Autopilot` library:
 ```
-cd /root/PX4_Autopilot
+cd /root/PX4-Autopilot
 DONT_RUN=1 make px4_sitl_rtps gazebo
+```
+Note, since this builds PX4, and the build is also mounted into the docker, rebooting the docker container does not require rebuilding the PX4-Autopilot. However, if you make changes in PX4-Autopilot, please rebuild `PX4-Autopilot`.
+
+If there are some errors like `"Error: /root/PX4-Autopilot/build/px4_sitl_rtps is not a directory"` its likely a permissions thing. Just run 
+```
+chown -R user build
+chgrp -R 1000 build
 ```
 
 Next, we need to build the colcon workspace. 

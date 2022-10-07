@@ -1,17 +1,15 @@
-FROM px4io/px4-dev-ros2-foxy:2021-12-11
+FROM px4io/px4-dev-ros2-galactic
 
 RUN apt-get update && \
- apt-get install -y --no-install-recommends vim tmux && \
- rm -fr /var/lib/apt/lists/{apt,dpkg,cache,log}
+ apt-get install -y --no-install-recommends vim tmux
 
 # install gazebo and any other packages necessary
 RUN apt-get update && apt-get install -y \
-  ros-foxy-gazebo-ros-pkgs \
-  && rm -fr /var/lib/apt/lists/{apt,dpkg,cache,log}
+  ros-galactic-gazebo-ros-pkgs
 
 # source folders
 WORKDIR /root/colcon_ws
-RUN echo 'source /opt/ros/foxy/setup.bash' >> ~/.bashrc
+RUN echo 'source /opt/ros/galactic/setup.bash' >> ~/.bashrc
 RUN echo 'source /root/colcon_ws/install/setup.bash' >> ~/.bashrc
 
 WORKDIR /root/colcon_ws
