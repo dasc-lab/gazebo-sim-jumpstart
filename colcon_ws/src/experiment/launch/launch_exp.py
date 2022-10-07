@@ -12,6 +12,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
+    print("hi")
+
     """Launch Gazebo with a drone running PX4 communicating over ROS 2."""
     HOME = os.environ.get('HOME')
     PX4_RUN_DIR = HOME + '/tmp/px4_run_dir'

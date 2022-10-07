@@ -5,7 +5,8 @@ RUN apt-get update && \
 
 # install gazebo and any other packages necessary
 RUN apt-get update && apt-get install -y \
-  ros-galactic-gazebo-ros-pkgs
+    libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev  \ 
+    ros-galactic-gazebo-ros-pkgs
 
 # source folders
 WORKDIR /root/colcon_ws
