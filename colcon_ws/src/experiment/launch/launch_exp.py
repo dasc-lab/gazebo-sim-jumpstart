@@ -22,7 +22,7 @@ def generate_launch_description():
 
     # the world and models are copied directly from the PX4-Autopilot directory
     experiment_gazebo_dir = get_package_share_directory('experiment')
-    world = os.path.join(experiment_gazebo_dir, 'worlds', 'warehouse.world')
+    world = os.path.join(experiment_gazebo_dir, 'worlds', 'empty.world') # 'warehouse.world')
     model = os.path.join(experiment_gazebo_dir, 'models', 'iris_depth_camera', 'iris_depth_camera.sdf')
 
     os.makedirs(PX4_RUN_DIR, exist_ok=True)
